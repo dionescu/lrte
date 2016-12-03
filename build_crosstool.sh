@@ -30,6 +30,10 @@ DEB_DIR=${RESULTS}/debs
 # Directory that stores upstream sources
 CROSSTOOL_SOURCES=$3
 
+cd ${CROSSTOOL_SOURCES}
+chown -R root:root *
+cd -
+
 # Crosstool configuration
 CROSSTOOL_VERSION="v2"
 
@@ -37,7 +41,7 @@ CROSSTOOL_GCC_VERSION="4.9"
 
 # Assume the clang source code is checked out following
 # http://clang.llvm.org/get_started.html
-CROSSTOOL_CLANG_VERSION="3.7"
+CROSSTOOL_CLANG_VERSION="4.0"
 
 : ${crosstool_rpmver:="1.0"}
 # Update this each time new RPM's are built.
@@ -59,7 +63,7 @@ ln -sf /bin/bash /bin/sh
 
 # install packages that are needed by building binutils and clang
 apt-get update
-apt-get install -y flex bison rpm texinfo texi2html libxml2-dev make alien
+apt-get install -y flex bison wget rpm texinfo texi2html libxml2-dev make alien
 
 function build_rpm() {
     local rpmrel=$1
@@ -120,10 +124,10 @@ dpkg -i ${DEB_DIR}/${GRTEBASENAME}-crosstool${CROSSTOOL_VERSION}-gcc-${CROSSTOOL
 
 # Build cmake because cmake in ubuntu 13 is too old
 mkdir -p ${STAGING}/cmake
-CMAKE_VERSION=3.3.2
+CMAKE_VERSION=3.5.2
 if [ ! -e ${CROSSTOOL_SOURCES}/cmake-${CMAKE_VERSION}.tar.gz ]; then
     pushd ${CROSSTOOL_SOURCES}
-    wget http://cmake.org/files/v3.3/cmake-${CMAKE_VERSION}.tar.gz
+    wget http://cmake.org/files/v3.5/cmake-${CMAKE_VERSION}.tar.gz
     popd
 fi
 tar zxf ${CROSSTOOL_SOURCES}/cmake-${CMAKE_VERSION}.tar.gz -C ${STAGING}/cmake

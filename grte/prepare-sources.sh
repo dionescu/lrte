@@ -47,7 +47,6 @@ make -C linux-${headers26} headers_install \
     ARCH=x86
 tar jxf ${TAR_DIR}/binutils-${binutils_version}.tar.bz2
 cd binutils-${binutils_version}
-# patch -p0 < ${TAR_DIR}/binutils-2.24-set-section-macros.patch
 find . -iname *.info -exec touch {} \;
 find . -iname *.po -exec touch {} \;
 cd "${OSRC}"

@@ -108,7 +108,7 @@ def main():
                         'xyzlrtev1-runtime_1.0-3_amd64.deb')
     parser.add_argument('--lrte_skip', choices=['step1', 'step2', 'final'], action='append',
                         help='Steps to skip when building LRTE(which could be step1, step2, final)')
-    parser.add_argument('--upstream_source', default=os.path.join(os.path.dirname(__file__), 'upstream'),
+    parser.add_argument('--upstream_source', default=os.path.join(os.path.dirname(__file__), 'sources'),
                         help='Directory that stores original downloaded packages, like glibc code')
     parser.add_argument('--no_build_crosstool', action='store_true',
                         help='Skip building crosstool')
