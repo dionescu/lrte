@@ -33,7 +33,7 @@ in a non-default location). The instrumented libstdc++ will be placed
 under _path_to_crosstool_base_/gcc-4.9.2-lrtev2/x86/lib64/msan.
 
 On the production machines, you should need to install ```lrtev2-runtime```
-package, which contains the glibc and libstdc++ libraries.Then gcc and
+package, which contains the glibc and libstdc++ libraries. Then gcc and
 clang under /usr/crosstool/v2/gcc-4.9.2-lrtev2/x86/bin can be used to
 produce binaries that only work with LRTE, which means these binaries
 only depend on glibc and libstdc++ coming from LRTE runtime, so they
