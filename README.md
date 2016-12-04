@@ -9,26 +9,13 @@ https://google-search-appliance-mirror.googlecode.com/files/grte-1.2.2-src.tar.b
 https://google-search-appliance-mirror.googlecode.com/files/crosstoolv13-gcc-4.4.0-glibc-2.3.6-grte-1.0-36185.src.rpm
 https://google-search-appliance-mirror.googlecode.com/files/grte-python2.4-2.4.6-7.src.tar.bz2
 
-ChangeLog
-=========
-
- - grte-1.2.2-src.tar.bz2 -> grte with sources stripped
-
+Original github repo: [](https://github.com/mzhaom/lrte)
 
 Install and Usage
 =================
 
 It's recommended to just install the precomiled packages from release
-page. For example, to install lrtev2 with crosstool v2:
-
-```
-apt-get update
-apt-get install -y apt-transport-https
-echo 'deb https://github.com/mzhaom/lrte/releases/download/v2.0_0 ./' >> /etc/apt/sources.list
-apt-get update
-apt-get install -y --force-yes lrtev2-crosstoolv2-gcc-4.9 lrtev2-crosstoolv2-clang-3.7
-
-```
+page.
 
 On the production machines, you should need to install
 ```lrtev2-runtime``` package, which contains the glibc and libstdc++
@@ -59,5 +46,5 @@ For example:
 ```
 
 You can also refer to [build
-guide](https://github.com/mzhaom/lrte/wiki/Build-Guide) if you prefer
+guide](https://github.com/dionescu/lrte/wiki/Build-Guide) if you prefer
 building everything from source code for further customization.
