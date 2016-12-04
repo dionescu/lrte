@@ -1,6 +1,6 @@
 # Built using instructions from https://code.google.com/p/memory-sanitizer/wiki/InstrumentingLibstdcxx.
-# Note: This assumes you have lrtev2. You need to change this accordingly if a different lrte
-# version is used.
+# Note: This assumes you have lrtev2 in the standard location. You need to change this accordingly if a
+# different lrte version/location is used.
 CLANG=/usr/crosstool/v2/gcc-4.9.2-lrtev2/x86/bin/clang
 CLANGXX=/usr/crosstool/v2/gcc-4.9.2-lrtev2/x86/bin/clang++
 CLANG_HEADERS=$($CLANGXX -v -xc++ -c /dev/null |& grep -E 'lib/clang/[01-9.]+/include$' | head -1 | sed 's/ \+//')
