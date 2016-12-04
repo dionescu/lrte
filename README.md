@@ -25,10 +25,6 @@ apt-get update
 apt-get install -y --force-yes lrtev2-crosstoolv2-gcc-4.9 lrtev2-crosstoolv2-clang-4.0
 ```
 
-On the production machines, you should need to install
-```lrtev2-runtime``` package, which contains the glibc and libstdc++
-libraries.
-
 __Important__: If you want to handle MSAN instrumented builds, you will
 need to build an instrumented libstdc++ using the crosstool. To do
 this, simply run the ```msan.sh``` script after you install LRTE
@@ -36,11 +32,12 @@ this, simply run the ```msan.sh``` script after you install LRTE
 in a non-default location). The instrumented libstdc++ will be placed
 under _path_to_crosstool_base_/gcc-4.9.2-lrtev2/x86/lib64/msan.
 
-Then gcc and clang under /usr/crosstool/v2/gcc-4.9.2-lrtev2/x86/bin
-can be used to produce binaries that only work with LRTE, which means
-these binaries only depend on glibc and libstdc++ coming from LRTE
-runtime, so they can be shipped without worrying about the system's
-glibc version.
+On the production machines, you should need to install ```lrtev2-runtime```
+package, which contains the glibc and libstdc++ libraries.Then gcc and
+clang under /usr/crosstool/v2/gcc-4.9.2-lrtev2/x86/bin can be used to
+produce binaries that only work with LRTE, which means these binaries
+only depend on glibc and libstdc++ coming from LRTE runtime, so they
+can be shipped without worrying about the system's glibc version.
 
 Btw: the gcc and clang inside crosstool are linked against LRTE
 runtime they can pretty much run on any release of ubuntu or redhat.
