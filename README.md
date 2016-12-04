@@ -9,7 +9,7 @@ https://google-search-appliance-mirror.googlecode.com/files/grte-1.2.2-src.tar.b
 https://google-search-appliance-mirror.googlecode.com/files/crosstoolv13-gcc-4.4.0-glibc-2.3.6-grte-1.0-36185.src.rpm
 https://google-search-appliance-mirror.googlecode.com/files/grte-python2.4-2.4.6-7.src.tar.bz2
 
-Original github repo: [](https://github.com/mzhaom/lrte)
+Original github repo: https://github.com/mzhaom/lrte
 
 Install and Usage
 =================
@@ -46,5 +46,5 @@ For example:
 ```
 
 You can also refer to [build
-guide](https://github.com/dionescu/lrte/wiki/Build-Guide) if you prefer
+guide](https://github.com/dionescu/lrte/wiki) if you prefer
 building everything from source code for further customization.
