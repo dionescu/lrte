@@ -60,6 +60,6 @@ For example:
         /usr/lrte/v2/lib64/ld-linux-x86-64.so.2 (0x00007f6e55657000)
 ```
 
-You can also refer to [build
+You can also refer to the [build
 guide](https://github.com/dionescu/lrte/wiki) if you prefer
 building everything from source code for further customization.
