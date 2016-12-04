@@ -39,8 +39,8 @@ produce binaries that only work with LRTE, which means these binaries
 only depend on glibc and libstdc++ coming from LRTE runtime, so they
 can be shipped without worrying about the system's glibc version.
 
-Btw: the gcc and clang inside crosstool are linked against LRTE
-runtime they can pretty much run on any release of ubuntu or redhat.
+Btw: the gcc and clang inside crosstool are linked against LRTE runtime
+and they can pretty much run on any release of ubuntu or redhat.
 
 For example:
 
