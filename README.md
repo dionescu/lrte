@@ -29,7 +29,7 @@ On the production machines, you should need to install
 ```lrtev2-runtime``` package, which contains the glibc and libstdc++
 libraries.
 
-Important: If you want to handle MSAN instrumented builds, you will
+__Important__: If you want to handle MSAN instrumented builds, you will
 need to build an instrumented libstdc++ using the crosstool. To do
 this, simply run the ```msan.sh``` script after you install LRTE
 (note that you may need to modify the script if you installed LRTE
