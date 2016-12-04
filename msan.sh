@@ -5,9 +5,9 @@ CLANG=/usr/crosstool/v2/gcc-4.9.2-lrtev2/x86/bin/clang
 CLANGXX=/usr/crosstool/v2/gcc-4.9.2-lrtev2/x86/bin/clang++
 CLANG_HEADERS=$($CLANGXX -v -xc++ -c /dev/null |& grep -E 'lib/clang/[01-9.]+/include$' | head -1 | sed 's/ \+//')
 GCC=/usr/crosstool/v2/gcc-4.9.2-lrtev2/x86/bin/gcc
-RUNTIME=/usr/lrte/v2/include
 # We need gcc's unwind.h. Either use the one for system-wide gcc installation if its fresh enough, or build gcc from the source on the side.
 GCC_HEADERS=$($GCC -v -xc++ -c /dev/null |& grep -E '/include$' | head -1 | sed 's/ \+//')
+RUNTIME=/usr/lrte/v2/include
 MSAN_CFLAGS="-fsanitize=memory -isystem $CLANG_HEADERS -isystem $GCC_HEADERS -isystem $RUNTIME  -g -O2 -fno-omit-frame-pointer"
 MSAN_LDFLAGS="-fsanitize=memory"
 mkdir build_msan && cd build_msan
