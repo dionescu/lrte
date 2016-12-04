@@ -20,7 +20,7 @@ page. For example, to install lrtev2 with crosstool v2:
 ```
 apt-get update
 apt-get install -y apt-transport-https
-echo 'deb https://github.com/dionescu/lrte/releases/download/v1.0 ./' >> /etc/apt/sources.list
+echo 'deb https://github.com/dionescu/lrte/releases/download/lrtev2 ./' >> /etc/apt/sources.list
 apt-get update
 apt-get install -y --force-yes lrtev2-crosstoolv2-gcc-4.9 lrtev2-crosstoolv2-clang-4.0
 ```
