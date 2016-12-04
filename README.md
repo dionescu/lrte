@@ -15,11 +15,25 @@ Install and Usage
 =================
 
 It's recommended to just install the precomiled packages from release
-page.
+page. For example, to install lrtev2 with crosstool v2:
+
+apt-get update
+apt-get install -y apt-transport-https
+echo 'deb https://github.com/dionescu/lrte/releases/download/v1.0 ./' >> /etc/apt/sources.list
+apt-get update
+apt-get install -y --force-yes lrtev2-crosstoolv2-gcc-4.9 lrtev2-crosstoolv2-clang-4.0
+
 
 On the production machines, you should need to install
 ```lrtev2-runtime``` package, which contains the glibc and libstdc++
 libraries.
+
+If you want to handle MSAN instrumented builds, you will need to build
+an instrumented libstdc++ using the crosstool. To do this, simply run
+the ```msan.sh`` script after you install LRTE (note that you may need
+to modify the script if you installed LRTE in a non-default location).
+The instrumented libstdc++ will be places under
+_path_to_crosstool_base_/gcc-4.9.2-lrtev2/x86/lib64/msan.
 
 Then gcc and clang under /usr/crosstool/v2/gcc-4.9.2-lrtev2/x86/bin
 can be used to produce binaries that only work with LRTE, which means
